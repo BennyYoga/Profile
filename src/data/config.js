@@ -53,16 +53,39 @@ export const profileData = {
       { name: 'Riset Pasar', level: 95 },
       { name: 'Analisis Data (SPSS)', level: 80 },
       { name: 'Microsoft Excel', level: 95 },
-      { name: 'Keterampilan Presentasi', level: 90 },
+      { name: 'Presentasi Bisnis', level: 90 },
     ],
     professional: [
-      'Pemikiran Strategis',
-      'Kepemimpinan',
-      'Negosiasi',
-      'Manajemen Proyek',
-      'Kolaborasi Tim',
+      {
+        name: 'Komunikasi',
+        description: 'Kemampuan menyampaikan ide secara jelas dan efektif',
+      },
+      {
+        name: 'Kepemimpinan',
+        description: 'Memimpin tim dan proyek dengan efektif',
+      },
+      {
+        name: 'Manajemen Waktu',
+        description: 'Mengatur prioritas dan deadline dengan baik',
+      },
+      {
+        name: 'Kerja Tim',
+        description: 'Kolaborasi efektif dalam tim multidisiplin',
+      },
     ],
-    tools: ['Google Analytics', 'Google Data Studio', 'Canva', 'Trello', 'Slack'],
+    software: [
+      { name: 'Excel', icon: 'bi bi-file-earmark-excel', level: 5 },
+      { name: 'SPSS', icon: 'bi bi-bar-chart-line', level: 4 },
+      { name: 'PowerPoint', icon: 'bi bi-file-earmark-ppt', level: 5 },
+      { name: 'Word', icon: 'bi bi-file-earmark-word', level: 4 },
+      { name: 'Canva', icon: 'bi bi-palette', level: 3 },
+      { name: 'Trello', icon: 'bi bi-kanban', level: 4 },
+    ],
+    languages: [
+      { language: 'Bahasa Indonesia', proficiency: 'Native', level: 100 },
+      { language: 'Bahasa Inggris', proficiency: 'Fluent', level: 85 },
+      { language: 'Bahasa Mandarin', proficiency: 'Intermediate', level: 60 },
+    ],
   },
   experience: [
     {
@@ -117,11 +140,11 @@ export const profileData = {
       degree: 'Program Ilmu Sosial',
       institution: 'SMA Negeri 8 Jakarta',
       year: '2015 - 2018',
-      icon: 'bi-backpack',
-      achievements: [
-        'Best Delegate dalam Model United Nations 2017',
-        'Ketua Divisi Pemasaran OSIS',
-      ],
+      icon: 'bi-mortarboard',
+      gpa: '9.3/10 (Ranking 5 dari 200)',
+      courses: ['Ekonomi', 'Sosiologi', 'Geografi', 'Matematika Dasar', 'Bahasa Inggris'],
+      description:
+        'Aktif dalam organisasi siswa dan kegiatan ekstrakurikuler, termasuk debat dan kepemimpinan dan mendapatkan penghargaan sebagai siswa berprestasi di bidang akademik dan non-akademik',
     },
   ],
   projects: [
