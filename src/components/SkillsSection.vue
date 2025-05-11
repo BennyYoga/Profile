@@ -9,7 +9,7 @@
           <div class="skill-card card h-100 border-0 shadow-sm">
             <div class="card-body">
               <div class="d-flex align-items-center mb-4">
-                <div class="skill-icon bg-primary bg-opacity-10 text-primary">
+                <div class="skill-icon secondary">
                   <i class="bi bi-code-square"></i>
                 </div>
                 <h3 class="h4 mb-0 ms-3">Kemampuan Teknis</h3>
@@ -27,7 +27,7 @@
                 <div class="progress" style="height: 8px">
                   <div
                     class="progress-bar"
-                    :style="{ width: category.level + '%', 'background-color': primaryColor }"
+                    :style="{ width: category.level + '%' }"
                     role="progressbar"
                   ></div>
                 </div>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="software-name small text-center">{{ software.name }}</div>
                     <div class="software-level">
-                      <div class="stars" :style="{ color: primaryColor }">
+                      <div class="stars">
                         <i
                           v-for="star in 5"
                           :key="'star-' + idx + '-' + star"
@@ -66,7 +66,7 @@
           <div class="skill-card card h-100 border-0 shadow-sm">
             <div class="card-body">
               <div class="d-flex align-items-center mb-4">
-                <div class="skill-icon bg-primary bg-opacity-10 text-primary">
+                <div class="skill-icon secondary">
                   <i class="bi bi-people"></i>
                 </div>
                 <h3 class="h4 mb-0 ms-3">Soft Skills</h3>
@@ -159,6 +159,12 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+  color: white;
+  background: v-bind('$root.theme.gradientPrimary');
+}
+
+.progress-bar {
+  background: v-bind('$root.theme.gradientPrimary');
 }
 
 .progress {
@@ -184,6 +190,7 @@ export default {
   height: 50px;
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.03);
+  color: v-bind('$root.theme.primary');
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -192,6 +199,7 @@ export default {
 
 .stars {
   font-size: 0.8rem;
+  color: v-bind('$root.theme.primary');
 }
 
 .soft-skill-item {
@@ -204,8 +212,7 @@ export default {
   background-color: rgba(0, 0, 0, 0.05);
   transform: translateY(-3px);
 }
-
-.skill-bullet {
+R .skill-bullet {
   width: 12px;
   height: 12px;
   border-radius: 50%;

@@ -23,11 +23,8 @@
             >
               <i :class="link.icon"></i>
             </a>
-            <a
-              :href="`mailto:${headerData.contact.email}`"
-              class="btn btn-light btn-sm ms-2 hover-grow"
-            >
-              <i class="bi bi-envelope me-2"></i>Contact Me
+            <a href="/CV.pdf" class="btn btn-light btn-sm ms-2 hover-grow" target="_blank">
+              <i class="bi bi-envelope me-2"></i>Download CV
             </a>
           </div>
 
@@ -71,24 +68,17 @@ export default {
 </script>
 
 <style scoped>
+.social-links,
+.container {
+  position: relative;
+  z-index: 1;
+}
+
 .header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: v-bind('$root.theme.gradientPrimary');
   padding: 5rem 0;
   position: relative;
   overflow: hidden;
-}
-
-/* Frame Profil Kreatif */
-.profile-frame {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-  position: relative;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
-  animation: morph 8s ease-in-out infinite;
-  border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .profile-img {
@@ -96,25 +86,57 @@ export default {
   height: 100%;
   object-fit: cover;
   border-radius: inherit;
-  transform: scale(0.95);
-  transition: all 0.3s ease;
+  transform: scale(0.98);
+  transition:
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 0.8s ease;
+  filter: brightness(0.95);
 }
 
 .profile-frame:hover .profile-img {
-  transform: scale(1);
-  filter: brightness(1.1);
+  transform: scale(1.02);
+  filter: brightness(1.05);
 }
 
 /* Animasi Frame */
+.profile-frame {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  animation: morph 8s ease-in-out infinite;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 1s ease-in-out;
+}
+
 @keyframes morph {
   0% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   }
   50% {
-    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    border-radius: 40% 60% 70% 40%/50% 60% 30% 60%;
   }
   100% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+/* Efek yang lebih halus */
+.profile-frame {
+  animation:
+    morph 12s ease-in-out infinite,
+    float 6s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
   }
 }
 

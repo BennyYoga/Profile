@@ -22,7 +22,7 @@
                 <span
                   v-for="(tag, tagIndex) in project.tags"
                   :key="tagIndex"
-                  class="badge bg-primary bg-opacity-10 text-primary"
+                  class="badge badge-setting"
                 >
                   {{ tag }}
                 </span>
@@ -53,6 +53,11 @@ export default {
 </script>
 
 <style scoped>
+.badge-setting {
+  background-color: v-bind('$root.theme.bgPrimary');
+  color: v-bind('$root.theme.textPrimary');
+}
+
 .projects-section {
   position: relative;
 }

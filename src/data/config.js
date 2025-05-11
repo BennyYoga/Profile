@@ -7,26 +7,26 @@ export const profileData = {
     title: 'Lulusan Manajemen | Spesialis Pengembangan Bisnis',
     image: 'profile.jpg',
     socialLinks: [
-      { name: 'LinkedIn', url: 'https://linkedin.com/in/dewisartika', icon: 'bi bi-linkedin' },
-      { name: 'Twitter', url: 'https://twitter.com/dewisartika', icon: 'bi bi-twitter' },
-      { name: 'Instagram', url: 'https://instagram.com/dewi.sartika', icon: 'bi bi-instagram' },
+      { name: 'LinkedIn', url: 'https://#', icon: 'bi bi-linkedin' },
+      { name: 'Twitter', url: 'https://#', icon: 'bi bi-twitter' },
+      { name: 'Instagram', url: 'https://#', icon: 'bi bi-instagram' },
     ],
     contact: {
       email: 'dewi.sartika@contoh.com',
-      phone: '+62 812-3456-7890',
+      phone: '+62 123-4567-8901',
       website: 'https://dewisartika.me',
     },
   },
   profile: {
     summary:
-      'Lulusan baru Manajemen dari Universitas Indonesia dengan IPK 3.8, berspesialisasi dalam Pemasaran dan Pengembangan Bisnis. Berpengalaman dalam riset pasar, strategi bisnis, dan transformasi digital melalui magang dan aktivitas organisasi.',
+      'Lulusan baru Manajemen dari Salah Satu Universitas di Indonesia dengan IPK 3.8, berspesialisasi dalam Pemasaran dan Pengembangan Bisnis. Berpengalaman dalam riset pasar, strategi bisnis, dan transformasi digital melalui magang dan aktivitas organisasi.',
     details: {
       age: '24',
       location: 'Jakarta, Indonesia',
       languages: 'Bahasa Inggris (Fasih), Bahasa Indonesia (Asli)',
       availability: 'Tersedia untuk posisi full-time',
       email: 'dewi.sartika@contoh.com',
-      phone: '+62 812-3456-7890',
+      phone: '+62 123-4567-8901',
     },
     strengths: [
       {
@@ -121,7 +121,7 @@ export const profileData = {
   education: [
     {
       degree: 'Sarjana Manajemen',
-      institution: 'Universitas Indonesia',
+      institution: 'Salah Satu Universitas di Indonesia',
       year: '2018 - 2022',
       gpa: 'IPK: 3.82/4.00 (Cum Laude)',
       icon: 'bi-mortarboard',
@@ -138,7 +138,7 @@ export const profileData = {
     },
     {
       degree: 'Program Ilmu Sosial',
-      institution: 'SMA Negeri 8 Jakarta',
+      institution: 'SMA Negeri Jakarta',
       year: '2015 - 2018',
       icon: 'bi-mortarboard',
       gpa: '9.3/10 (Ranking 5 dari 200)',

@@ -9,15 +9,11 @@
           :key="index"
           class="timeline-item position-relative"
         >
-          <div class="timeline-badge">
-            <i class="bi bi-briefcase"></i>
-          </div>
-
           <div class="timeline-card card border-0 shadow-sm">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center mb-3">
-                <h3 class="h4 mb-0 text-primary">{{ exp.position }}</h3>
-                <span class="badge bg-primary bg-opacity-10 text-primary py-2">
+                <h3 class="h4 mb-0 main-color">{{ exp.position }}</h3>
+                <span class="badge badge-setting py-2">
                   {{ exp.duration }}
                 </span>
               </div>
@@ -32,7 +28,7 @@
               <h5 class="h6 text-muted mb-2">Responsibilities:</h5>
               <ul class="responsibilities">
                 <li v-for="(resp, respIndex) in exp.responsibilities" :key="respIndex">
-                  <i class="bi bi-arrow-right-short text-primary"></i>{{ resp }}
+                  <i class="bi bi-arrow-right-short main-color"></i>{{ resp }}
                 </li>
               </ul>
 
@@ -42,7 +38,7 @@
                   <span
                     v-for="(tech, techIndex) in exp.technologies"
                     :key="techIndex"
-                    class="badge bg-primary bg-opacity-10 text-primary"
+                    class="badge badge-setting"
                   >
                     {{ tech }}
                   </span>
@@ -69,6 +65,15 @@ export default {
 </script>
 
 <style scoped>
+.main-color {
+  color: v-bind('$root.theme.textPrimary');
+}
+
+.badge-setting {
+  background-color: v-bind('$root.theme.bgPrimary');
+  color: v-bind('$root.theme.textPrimary');
+}
+
 .timeline {
   position: relative;
   padding-left: 50px;
@@ -94,7 +99,7 @@ export default {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background: v-bind('$root.theme.gradientPrimary');
   color: white;
   display: flex;
   align-items: center;

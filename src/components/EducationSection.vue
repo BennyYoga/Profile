@@ -12,7 +12,7 @@
                   <i class="bi" :class="edu.icon"></i>
                 </div>
                 <div>
-                  <h3 class="h4 text-primary">{{ edu.degree }}</h3>
+                  <h3 class="h4 main-color">{{ edu.degree }}</h3>
                   <h4 class="h5 mb-3">{{ edu.institution }}</h4>
 
                   <div class="d-flex align-items-center mb-3">
@@ -31,7 +31,7 @@
                       <span
                         v-for="(course, courseIndex) in edu.courses"
                         :key="courseIndex"
-                        class="badge bg-primary bg-opacity-10 text-primary"
+                        class="badge badge-setting"
                       >
                         {{ course }}
                       </span>
@@ -60,11 +60,20 @@ export default {
 </script>
 
 <style scoped>
+.main-color {
+  color: v-bind('$root.theme.primary');
+}
+
+.badge-setting {
+  background-color: v-bind('$root.theme.bgPrimary');
+  color: v-bind('$root.theme.textPrimary');
+}
+
 .edu-icon {
   width: 60px;
   height: 60px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background: v-bind('$root.theme.gradientPrimary');
   color: white;
   display: flex;
   align-items: center;

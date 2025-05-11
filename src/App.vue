@@ -3,6 +3,7 @@
     <Header :headerData="data.header" />
 
     <main class="container py-5">
+      <MetaHead />
       <ProfileSection :profileData="data.profile" />
       <SkillsSection :skillsData="data.skills" />
       <ExperienceSection :experienceData="data.experience" />
@@ -13,7 +14,11 @@
 
     <footer class="bg-dark text-white py-4 mt-5">
       <div class="container text-center">
-        <p>&copy; {{ new Date().getFullYear() }} {{ data.header.name }}. All rights reserved.</p>
+        <p>
+          &copy; {{ new Date().getFullYear() }}
+          <a href="https://profileku.netlify.app/" class="text-light" target="_blank">ProfileKu</a>.
+          All rights reserved.
+        </p>
       </div>
     </footer>
   </div>
@@ -21,6 +26,7 @@
 
 <script>
 import { profileData } from './data/config'
+import { colors } from './data/color'
 import Header from './components/Header.vue'
 import ProfileSection from './components/ProfileSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
@@ -28,10 +34,12 @@ import ExperienceSection from './components/ExperienceSection.vue'
 import EducationSection from './components/EducationSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import AwardsSection from './components/AwardsSection.vue'
+import MetaHead from './components/MetaHead.vue'
 
 export default {
   name: 'App',
   components: {
+    MetaHead,
     Header,
     ProfileSection,
     SkillsSection,
@@ -43,6 +51,7 @@ export default {
   data() {
     return {
       data: profileData,
+      theme: colors,
     }
   },
 }
@@ -52,15 +61,25 @@ export default {
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css');
 
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #2c3e50;
-  --accent-color: #e74c3c;
+  --primary: v-bind('$root.data.theme.primary');
+  --secondary: v-bind('$root.data.theme.secondary');
+  --accent: v-bind('$root.data.theme.accent');
+  --background: v-bind('$root.data.theme.background');
+
+  /* Turunan warna untuk komponen */
+  --icon-primary: var(--primary);
+  --icon-secondary: var(--secondary);
+  --icon-accent: var(--accent);
+  --text-primary: #333333;
+  --text-secondary: #7f8c8d;
+  --badge-primary-bg: rgba(52, 152, 219, 0.1);
+  --badge-primary-text: var(--primary);
+  --badge-secondary-bg: rgba(139, 92, 246, 0.1);
+  --badge-secondary-text: var(--secondary);
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #333;
+  background-color: var(--background);
 }
 
 .section-title {
@@ -105,9 +124,7 @@ body {
 
 /* Card hover effect */
 .card-hover {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-hover:hover {
